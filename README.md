@@ -17,6 +17,7 @@
 * [x] 🪜 Schritt für Schritt
 * [x] 🐍 Keine Vorkenntnisse im Programmieren erforderlich
 * [x] 🚀 KI souverän und effektiv nutzen
+* [x] ❤️ Open-source Modelle und Software
 
 
 ## Lektionen
