@@ -29,7 +29,7 @@
 5. Datenverarbeitung (pandas, LangChain)
 6. Entscheidungen treffen (multiple choice via constrained generation)
 7. Komplexe Arbeitsabläufe (LangChain)
-8. Bonus: Magische Textgenerierung (Guidance)
+8. Bonus: Magische Textgenerierung (Guidance, SGLang)
 9. Bonus: RAG
 
 ## Über die AutorInnen
