@@ -11,17 +11,19 @@
                                 /____/                                   
 ```
 
-<h1>Große Sprachmodelle nutzen wie ein Profi:</br>Eine praktische Anleitung</h1>
+<h1>Getting Serious with Large Language Models:</br>A Practical Introduction</h1>
 
-* [x] 🕹️ Interaktiv und experimentierend lernen 
-* [x] 🪜 Schritt für Schritt
-* [x] 🐍 Keine Vorkenntnisse im Programmieren erforderlich
-* [x] 🚀 KI souverän und effektiv nutzen
-* [x] ❤️ Open-source Modelle und Software
+* [x] 🕹️ playful and explorative learning 
+* [x] 🪜 step by step
+* [x] ⏱️ short and simple
+* [x] 🦆 no coding skills required to get started
+* [x] 🛤️ putting you on track to use AI like a pro
+* [x] ❤️ open source models and software
 
 
-## Lektionen
+## Lessons
 
+<!--
 1. Texte generieren (pipeline, Modell laden, tokenizer, greedy, sampling, beam search)
 2. Große Modelle aus der Cloud (openai, HuggingFace)
 3. Promptschablonen (LangChain)
@@ -31,5 +33,6 @@
 7. Komplexe Arbeitsabläufe (LangChain)
 8. Bonus: Magische Textgenerierung (Guidance, SGLang)
 9. Bonus: RAG
+-->
 
-## Über die AutorInnen
+## About
