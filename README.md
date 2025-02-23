@@ -4,11 +4,11 @@
   / __ \/ _ \/ / / / __ \/ __ \/ __  /   
  / /_/ /  __/ /_/ / /_/ / / / / /_/ /    
 /_.___/\___/\__, /\____/__ /_/\__,_/     
-  _____/ /_/_____ _/ /_/ /_(_)___  ____ _
+  _____/ /_  ___/ _/ /_/ /_(_)___  ____ _
  / ___/ __ \/ __ `/ __/ __/ / __ \/ __ `/
 / /__/ / / / /_/ / /_/ /_/ / / / / /_/ / 
 \___/_/ /_/\__,_/\__/\__/_/_/ /_/\__, /  
-                                /____/                                   
+                                /____/   
 ```
 
 <h1>Getting Serious with Large Language Models:</br>A Practical Introduction</h1>
@@ -18,6 +18,7 @@
 * [x] ⏱️ short and simple
 * [x] 🦆 no coding skills required to get started
 * [x] 🛤️ putting you on track to use AI like a pro
+* [x] 🏡 all-local AI 
 * [x] ❤️ open source models and software
 
 
