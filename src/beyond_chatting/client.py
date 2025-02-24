@@ -2,10 +2,14 @@ from abc import ABC, abstractmethod
 from enum import Enum
 from getpass import getpass
 import os
+import socket
 
 from huggingface_hub import HfApi
 from openai import OpenAI
 import rich
+from rich.progress import Progress
+
+from beyond_chatting.utils import in_notebook
 
 
 class Provider(Enum):
@@ -30,11 +34,46 @@ class LocalOpenAIClient(Client):
         "api_key": "empty",
     }
 
+    _default_models = [
+        "meta-llama/Llama-3.2-3B-Instruct",
+        "meta-llama/Llama-3.2-1B-Instruct",
+        "Qwen/Qwen2.5-0.5B-Instruct",
+    ]
+
+
     def __init__(self, model_id: str | None, model_kwargs: dict = {}, gen_kwargs: dict = {}):
         self.model_kwargs = {**self._default_model_kwargs, **model_kwargs}
         self.gen_kwargs = gen_kwargs
-        self.model_id = model_id if model_id else "local-default"
-        self.client = OpenAI(**self.model_kwargs)
+
+        try:
+            self.client = OpenAI(**self.model_kwargs)
+            self.client.models.list()
+        except Exception:
+            client = next(self.search_inference_server(), None)
+            if client is None:
+                rich.print("🚨🚨🚨 No local inference server found. Please start one and try again. 🚨🚨🚨")
+                if in_notebook():
+                    rich.print(
+                        "👉 Set up a local inference server (like llama.cpp) and re-run the entire notebook. "
+                        "Do [bold]not[/bold] proceed with executing the next cells, as this might throw errors."
+                    )
+                    return
+                exit(1)
+            self.client = client
+
+        served_models = [model.id for model in self.client.models.list().data]
+        if not served_models:
+            rich.print(f"🚨🚨🚨 No models are currently available on the local inference server running at {self.client.base_url}. 🚨🚨🚨")
+            if in_notebook():
+                return
+            exit(1)
+        model_id = next((m for m in self._default_models if m in served_models), None)
+        if model_id is None:
+            model_id = served_models[0]
+        self.model_id = model_id
+
+        self.model_kwargs["base_url"] = self.client.base_url
+        rich.print(f"🤖 Found local model {self.model_id} at {self.client.base_url}")
 
     def create(self, messages: list[dict], *args, **kwargs):
         gen_kwargs = {**self.gen_kwargs, **kwargs}
@@ -45,6 +84,31 @@ class LocalOpenAIClient(Client):
         )
         return chat_completion.choices[0].message.content
     
+    def search_inference_server(self):
+        ports = list(range(1000, 9000))
+
+        with Progress() as progress:
+            task_scan = progress.add_task("[cyan]Scanning local ports...", total=len(ports))
+
+            for port in ports:
+                progress.update(task_scan, advance=1)
+
+                sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                if sock.connect_ex(("localhost", port)) != 0:
+                    continue
+
+                url = f"http://localhost:{port}/v1/"
+                try:
+                    client = OpenAI(base_url=url, api_key="empty")
+                    client.models.list()
+                    progress.update(task_scan, completed=len(ports), refresh=True)
+
+                    yield client
+                except Exception:
+                    continue
+
+            progress.update(task_scan, completed=len(ports), refresh=True)
+
 
 class HuggingFaceInferenceApiClient(Client):
 
