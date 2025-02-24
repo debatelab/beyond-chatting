@@ -47,7 +47,7 @@
 9. Bonus: RAG
 -->
 
-## Installation (might take up to 1h)
+## Installation (might easily take up to 1h)
 
 > 💡 INFO
 >
@@ -56,10 +56,20 @@
 
 Required or recommended:
 
+* A local LLM inference server
 * Git
 * Python
 * VS Code
 * VS Code Python Extension
+
+Beyond-chatting assumes that you're running a LLM on your own computer. To do so, install
+
+* [LM Studio](https://lmstudio.ai/)
+* [Jan.ai](https://jan.ai/)
+* [llama.cpp](https://github.com/ggml-org/llama.cpp/blob/master/docs/install.md)
+* or any alternative inference server app;
+
+download, as described in your LLM App's documentation, a local model; and start an OpenAI-compatible inference server. *Note*: I've been testing the course with 🦙 **meta-llama/llama-3.2-3b-instruct**. 
 
 In your `> Terminal` app: set up git, which you'll need to download the beyond-chatting course, as [pointed out here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
@@ -67,7 +77,7 @@ To set up python, I suggest you install `uv` as described [here](https://docs.as
 
 To set up VS Code, [download](https://code.visualstudio.com/) and install the code editor.
 
-To set up the VS Code Python Extension, follow the instructions [here](https://code.visualstudio.com/docs/python/python-quick-start) and [here](https://marketplace.visualstudio.com/items?itemName=ms-python.python).
+To set up the VS Code Python Extension, follow the instructions [here](https://marketplace.visualstudio.com/items?itemName=ms-python.python) (some more [background](https://code.visualstudio.com/docs/python/python-quick-start)).
 
 For a pleasant and less intimidating look, you might consider to install the [catppuccin theme](https://marketplace.visualstudio.com/items?itemName=AlexDauenhauer.catppuccin-noctis) and the corresponding [icon set](https://marketplace.visualstudio.com/items?itemName=AlexDauenhauer.catppuccin-noctis-icons). 
 
