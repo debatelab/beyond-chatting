@@ -25,7 +25,7 @@
 ## Lessons
 
 
-* **Lesson 01**: ⛓️ Chains and 💬 Chats with 🦹‍♀️ Placeholders [[notebook]](./lessons/lesson01.ipynb)
+* **Lesson 01**: ⛓️ Chains and 💬 Chats with 🫥 Placeholders [[notebook]](./lessons/lesson01.ipynb)
 * **Lesson 02** (planned): Devise and Control Sophisticated Workflows (If-Then-Conditions, Branches, Iterations, etc.)
 * **Lesson 03** (planned): Connecting LLM-Workflows To Your Data
 * **Lesson 04** (possible): Understanding and Exploiting Decoding Techniques
