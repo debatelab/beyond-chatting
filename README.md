@@ -13,6 +13,7 @@
 
 <h1>Getting Serious with Large Language Models:</br>A Practical Introduction</h1>
 
+
 * [x] 🕹️ playful and explorative learning 
 * [x] 🪜 step by step
 * [x] ⏱️ short and simple
@@ -47,7 +48,7 @@
 9. Bonus: RAG
 -->
 
-## Installation (might easily take up to 1h)
+## Installation (might take 1h+)
 
 > 💡 INFO
 >
@@ -102,4 +103,17 @@ Then start VS Code and [open the beyond-chatting folder as a workspace](https://
 🎉 Congrats. You're now ready to start.
 
 
+## Other Learning Resources
+
+* 😎 https://github.com/mlabonne/llm-course
+* 🤗 https://huggingface.co/learn
+* 🦜 https://python.langchain.com/docs/tutorials/
+* 📄 https://dottxt-ai.github.io/outlines/latest/cookbook/
+
 ## About
+
+This is currently a side project of mine. In case the course is picked up and considered useful, I'm happy to  expand the tutorials.
+
+Please **⭐️ star this repo** in case you think its useful.
+
+Feel free to suggest topics that should be covered via Github issues.
