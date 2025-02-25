@@ -48,7 +48,7 @@
 9. Bonus: RAG
 -->
 
-## Installation (might take 1h+)
+## Installation (might take >1h)
 
 > 💡 INFO
 >
