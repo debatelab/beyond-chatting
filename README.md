@@ -114,6 +114,6 @@ Then start VS Code and [open the beyond-chatting folder as a workspace](https://
 
 This is currently a side project of mine. In case the course is picked up and considered useful, I'm happy to  expand the tutorials.
 
-Please **⭐️ star this repo** in case you think its useful.
+Please **⭐️ star this repo** in case you think it's useful.
 
 Feel free to suggest topics that should be covered via Github issues.
